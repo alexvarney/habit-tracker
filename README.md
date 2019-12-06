@@ -1,4 +1,4 @@
-#HabitTracker
+# HabitTracker
 
 A React app for tracking daily habits.
 
