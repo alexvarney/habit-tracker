@@ -58,7 +58,7 @@ function UserEdit(props) {
           id="userEditEmailInput"
         />
       </div>
-    <div className="form-group">
+    {/*<div className="form-group">
         <label htmlFor="userEditPasswordInput">New Password</label>
         <input
           type="text"
@@ -68,7 +68,7 @@ function UserEdit(props) {
           className="form-control"
           id="userEditPasswordInput"
         />
-      </div>
+  </div> */}
       <button className="btn btn-primary" type="submit">Submit</button>
       <button className="btn btn-secondary" onClick={props.onClose} type="button">Exit</button>
     </form>

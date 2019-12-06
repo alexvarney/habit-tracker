@@ -1,0 +1,10 @@
+.dateRow {
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  align-items: center;
+}
+
+.dateRow:nth-child(odd){
+  background: #E3E3E3;
+}

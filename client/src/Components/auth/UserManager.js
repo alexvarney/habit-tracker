@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import LoginForm from './auth/LoginForm'
-import UserProfile from './auth/UserProfile'
+import LoginForm from './LoginForm'
+import UserProfile from './UserProfile'
 
 
 function UserManager(props) {

@@ -4,9 +4,17 @@ import { logout } from "../Store/Actions/auth";
 import { Link } from "react-router-dom";
 
 function Header(props) {
+  
+  const navStyle = {
+    backgroundColor: '#414F61',
+    color: "#fff",
+    
+  }
+
   return (
-    <nav className="navbar navbar-light bg-light">
-      <span className="navbar-brand mb-0 h1"><Link to="/">MERN JWT Boilerpate</Link></span>
+
+    <nav className="navbar" style={navStyle}>
+      <span className="navbar-brand mb-0 h1"><Link to="/">HabitTracker</Link></span>
 
       {props.auth.loggedIn && props.auth.user ? (
         <div className="userInfo">
