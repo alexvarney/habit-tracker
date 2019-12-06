@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+  website:
+    image: alexvarney/habit-tracker:latest
+    container_name: habit-tracker-node
+    entrypoint: 'node /bin/www'
+    expose:
+      - "80"
+    environment:
+      - NODE_ENV=production
+      - PORT=80
+      - VIRTUAL_PORT=80
+      - JWT_KEY=thisisabadidea
+      - MONGO_HOST=mongodb://mongo:27017/candidate-dev
+      - VIRTUAL_HOST=habittracker.varney.me
+      - LETSENCRYPT_HOST=habittracker.varney.me
+      - LETSENCRYPT_EMAIL=alex@varney.me
+    volumes:
+      - /mnt/electionsmaster/assets:/mnt/electionsmaster/assets
+    networks:
+      - proxy
+      - app
+    links:
+      - mongo
+
+  mongo:
+    expose:
+      - "27017"
+    image: mongo:3.4
+    container_name: habit-tracker-mongodb
+    volumes:
+      - /var/lib/mongodb:/data/db
+    networks:
+      - app
+
+networks:
+  proxy:
+    external:
+      name: nginx-proxy
+  app:
