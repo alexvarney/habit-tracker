@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 import axios from "axios";
 import { connect } from "react-redux";
 
@@ -32,6 +33,10 @@ function HabitDisplay(props) {
       setHabits([]);
     }
   }, [auth.loggedIn, auth.token]);
+
+  if(!auth.loggedIn){
+    return <p>You must <Link style={{textDecoration: 'underline'}} to="/user">Login</Link> to view this page.</p>
+  }
 
   return (
     <>

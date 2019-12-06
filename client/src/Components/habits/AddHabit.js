@@ -23,8 +23,11 @@ function AddHabit({ auth, onUpdate }) {
   const setFormValues = e => {
     e.persist();
 
-    const updatedValue = (e.target.value.startsWith('#')) ? e.target.value : '#' + e.target.value
+    let updatedValue = e.target.value;
 
+    if(e.target.name === 'color'){
+      updatedValue = (e.target.value.startsWith('#')) ? e.target.value : '#' + e.target.value
+    }
     _setFormValues(prevState=>({
       ...prevState,
       [e.target.name]: updatedValue,
